@@ -7,6 +7,9 @@ import wq.android.mvvm.java.starter.databinding.ActivityDetailBinding;
 import wq.android.mvvm.java.starter.ui.base.BaseActivity;
 import wq.android.mvvm.java.starter.ui.detail.fragment.DetailFragment;
 
+/**
+ * @author wangqi
+ */
 public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailViewModel> {
 
     @Override

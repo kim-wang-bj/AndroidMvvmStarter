@@ -11,6 +11,9 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
+/**
+ * @author wangqi
+ */
 public abstract class BaseActivity<B extends ViewDataBinding, VM extends ViewModel> extends DaggerAppCompatActivity {
 
     private B binding;

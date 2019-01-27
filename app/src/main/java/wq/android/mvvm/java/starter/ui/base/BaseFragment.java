@@ -15,6 +15,9 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
 
+/**
+ * @author wangqi
+ */
 public abstract class BaseFragment<B extends ViewDataBinding, VM extends ViewModel> extends DaggerFragment {
     private B binding;
 

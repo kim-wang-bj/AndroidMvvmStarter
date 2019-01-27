@@ -8,6 +8,9 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * @author wangqi
+ */
 @Module
 public class AppModule {
 

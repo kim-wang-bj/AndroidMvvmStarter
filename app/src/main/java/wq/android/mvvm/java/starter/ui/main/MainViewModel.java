@@ -5,6 +5,9 @@ import javax.inject.Inject;
 import wq.android.mvvm.java.starter.data.ApiService;
 import wq.android.mvvm.java.starter.ui.base.BaseViewModel;
 
+/**
+ * @author wangqi
+ */
 public class MainViewModel extends BaseViewModel {
     private final ApiService apiService;
 

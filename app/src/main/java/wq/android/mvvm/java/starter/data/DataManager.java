@@ -7,13 +7,15 @@ import javax.inject.Singleton;
  * @author wangqi
  */
 @Singleton
-public class ApiService {
+public class DataManager {
+    private final ApiService apiService;
 
     @Inject
-    public ApiService() {
+    public DataManager(ApiService apiService) {
+        this.apiService = apiService;
     }
 
     public void loadData() {
-
+        apiService.loadData();
     }
 }

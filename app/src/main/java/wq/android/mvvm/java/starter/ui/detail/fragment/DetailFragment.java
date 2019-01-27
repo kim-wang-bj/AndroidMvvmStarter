@@ -6,10 +6,13 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import wq.android.mvvm.java.starter.R;
-import wq.android.mvvm.java.starter.databinding.ActivityMainBinding;
+import wq.android.mvvm.java.starter.databinding.FragmentDetailBinding;
 import wq.android.mvvm.java.starter.ui.base.BaseFragment;
 
-public class DetailFragment extends BaseFragment<ActivityMainBinding, DetailFragmentViewModel> {
+/**
+ * @author wangqi
+ */
+public class DetailFragment extends BaseFragment<FragmentDetailBinding, DetailFragmentViewModel> {
 
     public static DetailFragment newInstance() {
         Bundle args = new Bundle();
@@ -20,11 +23,11 @@ public class DetailFragment extends BaseFragment<ActivityMainBinding, DetailFrag
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        getViewModel().toString();
+        getViewModel().loadData();
     }
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_detail;
+        return R.layout.fragment_detail;
     }
 }

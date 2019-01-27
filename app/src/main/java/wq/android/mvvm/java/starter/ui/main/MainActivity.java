@@ -8,6 +8,9 @@ import wq.android.mvvm.java.starter.databinding.ActivityMainBinding;
 import wq.android.mvvm.java.starter.ui.base.BaseActivity;
 import wq.android.mvvm.java.starter.ui.detail.DetailActivity;
 
+/**
+ * @author wangqi
+ */
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
 
     @Override
