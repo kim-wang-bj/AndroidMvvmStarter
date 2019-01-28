@@ -27,7 +27,7 @@ public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseVie
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mViewModel.setNavigator(this);
+        mViewModel.init(this);
     }
 
     @Nullable
