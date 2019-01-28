@@ -1,6 +1,5 @@
-package wq.android.mvvm.java.starter.ui.base;
+package wq.android.mvvm.java.starter.core;
 
-import android.arch.lifecycle.ViewModel;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -14,17 +13,19 @@ import dagger.android.support.DaggerAppCompatActivity;
 /**
  * @author wangqi
  */
-public abstract class BaseActivity<B extends ViewDataBinding, VM extends ViewModel> extends DaggerAppCompatActivity {
+public abstract class BaseActivity<B extends ViewDataBinding, VM extends BaseViewModel> extends DaggerAppCompatActivity {
 
-    private B binding;
+    private B mBinding;
 
     @Inject
-    VM viewModel;
+    VM mViewModel;
 
     @Override
     final protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, getLayoutId());
+        mBinding = DataBindingUtil.setContentView(this, getLayoutId());
+        mBinding.setVariable(getBindingVariable(), mViewModel);
+        mViewModel.setNavigator(this);
         onActivityCreated(savedInstanceState);
     }
 
@@ -33,11 +34,13 @@ public abstract class BaseActivity<B extends ViewDataBinding, VM extends ViewMod
     @LayoutRes
     protected abstract int getLayoutId();
 
+    public abstract int getBindingVariable();
+
     protected B getBinding() {
-        return binding;
+        return mBinding;
     }
 
     protected VM getViewModel() {
-        return viewModel;
+        return mViewModel;
     }
 }

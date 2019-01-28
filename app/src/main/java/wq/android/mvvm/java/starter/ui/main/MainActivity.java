@@ -3,15 +3,16 @@ package wq.android.mvvm.java.starter.ui.main;
 import android.content.Intent;
 import android.os.Bundle;
 
+import wq.android.mvvm.java.starter.BR;
 import wq.android.mvvm.java.starter.R;
+import wq.android.mvvm.java.starter.core.BaseActivity;
 import wq.android.mvvm.java.starter.databinding.ActivityMainBinding;
-import wq.android.mvvm.java.starter.ui.base.BaseActivity;
 import wq.android.mvvm.java.starter.ui.detail.DetailActivity;
 
 /**
  * @author wangqi
  */
-public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
+public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> implements MainActivityNavigator {
 
     @Override
     protected void onActivityCreated(Bundle savedInstanceState) {
@@ -22,5 +23,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
+    }
+
+    @Override
+    public int getBindingVariable() {
+        return BR.viewModel;
     }
 }

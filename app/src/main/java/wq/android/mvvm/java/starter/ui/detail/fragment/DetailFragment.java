@@ -5,14 +5,17 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import wq.android.mvvm.java.starter.BR;
 import wq.android.mvvm.java.starter.R;
+import wq.android.mvvm.java.starter.core.BaseFragment;
 import wq.android.mvvm.java.starter.databinding.FragmentDetailBinding;
-import wq.android.mvvm.java.starter.ui.base.BaseFragment;
 
 /**
  * @author wangqi
  */
-public class DetailFragment extends BaseFragment<FragmentDetailBinding, DetailFragmentViewModel> {
+public class DetailFragment
+        extends BaseFragment<FragmentDetailBinding, DetailFragmentViewModel>
+        implements DetailFragmentNavigator {
 
     public static DetailFragment newInstance() {
         Bundle args = new Bundle();
@@ -24,10 +27,21 @@ public class DetailFragment extends BaseFragment<FragmentDetailBinding, DetailFr
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         getViewModel().loadData();
+        getBinding().button.setOnClickListener(v -> getViewModel().handleCloseEvent());
     }
 
     @Override
     public int getLayoutId() {
         return R.layout.fragment_detail;
+    }
+
+    @Override
+    public int getBindingVariable() {
+        return BR.viewModel;
+    }
+
+    @Override
+    public void close() {
+        getActivity().finish();
     }
 }

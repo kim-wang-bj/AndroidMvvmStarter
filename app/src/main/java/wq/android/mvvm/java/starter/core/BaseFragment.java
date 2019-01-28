@@ -1,6 +1,6 @@
-package wq.android.mvvm.java.starter.ui.base;
+package wq.android.mvvm.java.starter.core;
 
-import android.arch.lifecycle.ViewModel;
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -18,27 +18,36 @@ import dagger.android.support.DaggerFragment;
 /**
  * @author wangqi
  */
-public abstract class BaseFragment<B extends ViewDataBinding, VM extends ViewModel> extends DaggerFragment {
-    private B binding;
+public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseViewModel> extends DaggerFragment {
+    private B mBinding;
 
     @Inject
-    VM viewModel;
+    VM mViewModel;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mViewModel.setNavigator(this);
+    }
 
     @Nullable
     @Override
     public final View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);
-        return binding.getRoot();
+        mBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);
+        mBinding.setVariable(getBindingVariable(), mViewModel);
+        return mBinding.getRoot();
     }
 
     @LayoutRes
     public abstract int getLayoutId();
 
+    public abstract int getBindingVariable();
+
     public B getBinding() {
-        return binding;
+        return mBinding;
     }
 
     public VM getViewModel() {
-        return viewModel;
+        return mViewModel;
     }
 }

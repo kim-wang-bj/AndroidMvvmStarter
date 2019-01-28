@@ -10,15 +10,14 @@ import wq.android.mvvm.java.starter.App;
 /**
  * @author wangqi
  */
-@Singleton
 @Component(
         modules = {
                 AndroidSupportInjectionModule.class,
-                AppModule.class,
                 ActivityBuilder.class,
                 FragmentBuilder.class
         }
 )
+@Singleton
 public interface AppComponent extends AndroidInjector<App> {
 
     @Component.Builder

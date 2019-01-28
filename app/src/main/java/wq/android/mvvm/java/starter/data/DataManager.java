@@ -8,14 +8,14 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class DataManager {
-    private final ApiService apiService;
+    private final ApiService mApiService;
 
     @Inject
-    public DataManager(ApiService apiService) {
-        this.apiService = apiService;
+    public DataManager(ApiService mApiService) {
+        this.mApiService = mApiService;
     }
 
     public void loadData() {
-        apiService.loadData();
+        mApiService.loadData();
     }
 }
