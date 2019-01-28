@@ -33,6 +33,10 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$rootProject.supportTestRunnerVerstion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.supportEspressoVersion"
 
+    // lifecycle dependency
+    implementation "android.arch.lifecycle:extensions:$rootProject.lifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.lifecycleVersion"
+
     // dependency injection
     implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"

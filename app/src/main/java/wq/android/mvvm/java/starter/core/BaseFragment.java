@@ -1,5 +1,8 @@
 package wq.android.mvvm.java.starter.core;
 
+import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -28,6 +31,13 @@ public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseVie
     public void onAttach(Context context) {
         super.onAttach(context);
         mViewModel.init(this);
+        ViewModelProviders.of(this, new ViewModelProvider.Factory() {
+            @NonNull
+            @Override
+            public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+                return (T) mViewModel;
+            }
+        }).get(mViewModel.getClass().getName(), mViewModel.getClass());
     }
 
     @Nullable
