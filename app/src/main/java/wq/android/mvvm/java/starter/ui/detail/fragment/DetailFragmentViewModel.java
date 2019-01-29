@@ -31,7 +31,7 @@ public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigat
     public void loadData() {
         mDataManager.loadData();
         mCurrentTime.postValue(mDataFormat.format(new Date()));
-        addSubscription(Observable.interval(1, TimeUnit.SECONDS)
+        getCompositeDisposable().add(Observable.interval(1, TimeUnit.SECONDS)
                 .subscribe(c -> mCurrentTime.postValue(mDataFormat.format(new Date()))));
     }
 

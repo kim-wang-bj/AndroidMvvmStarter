@@ -5,7 +5,6 @@ import android.arch.lifecycle.ViewModel;
 import java.lang.ref.WeakReference;
 
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
 
 /**
  * @author wangqi
@@ -25,8 +24,8 @@ public abstract class BaseViewModel<N> extends ViewModel {
         return mNavigator == null ? null : mNavigator.get();
     }
 
-    public void addSubscription(Disposable disposable) {
-        mCompositeDisposable.add(disposable);
+    public CompositeDisposable getCompositeDisposable() {
+        return mCompositeDisposable;
     }
 
     @Override
