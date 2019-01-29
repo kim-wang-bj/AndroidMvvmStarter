@@ -12,24 +12,24 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import wq.android.mvvm.java.starter.core.BaseViewModel;
-import wq.android.mvvm.java.starter.data.DataManager;
+import wq.android.mvvm.java.starter.ui.detail.DetailDataManager;
 
 /**
  * @author wangqi
  */
 public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigator> {
 
-    private final DataManager mDataManager;
+    private final DetailDataManager mDataManager;
     private MutableLiveData<String> mCurrentTime = new MutableLiveData<>();
     private DateFormat mDataFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Inject
-    public DetailFragmentViewModel(DataManager mDataManager) {
+    public DetailFragmentViewModel(DetailDataManager mDataManager) {
         this.mDataManager = mDataManager;
     }
 
     public void loadData() {
-        mDataManager.loadData();
+        mDataManager.log();
         mCurrentTime.postValue(mDataFormat.format(new Date()));
         getCompositeDisposable().add(Observable.interval(1, TimeUnit.SECONDS)
                 .subscribe(c -> mCurrentTime.postValue(mDataFormat.format(new Date()))));

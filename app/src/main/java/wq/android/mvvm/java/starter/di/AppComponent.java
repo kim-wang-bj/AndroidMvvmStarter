@@ -13,8 +13,7 @@ import wq.android.mvvm.java.starter.App;
 @Component(
         modules = {
                 AndroidSupportInjectionModule.class,
-                ActivityBuilder.class,
-                FragmentBuilder.class
+                ActivityBuilder.class
         }
 )
 @Singleton
