@@ -26,6 +26,7 @@ public abstract class BaseActivity<B extends ViewDataBinding, VM extends BaseVie
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, getLayoutId());
         mBinding.setVariable(getBindingVariable(), mViewModel);
+        mBinding.setLifecycleOwner(this);
         mViewModel.init(this);
         ViewModelProviders.of(this, ViewModelPassThroughFactory.newInstance(mViewModel))
                 .get(mViewModel.getClass().getName(), mViewModel.getClass());

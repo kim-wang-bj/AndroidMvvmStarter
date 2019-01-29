@@ -27,7 +27,6 @@ public class DetailFragment
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         getViewModel().loadData();
-        getViewModel().getCurrentTime().observe(this, time -> getBinding().tvTime.setText(time));
         getBinding().button.setOnClickListener(v -> getViewModel().handleCloseEvent());
     }
 

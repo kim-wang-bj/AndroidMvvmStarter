@@ -38,6 +38,7 @@ public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseVie
     public final View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);
         mBinding.setVariable(getBindingVariable(), mViewModel);
+        mBinding.setLifecycleOwner(this);
         return mBinding.getRoot();
     }
 
