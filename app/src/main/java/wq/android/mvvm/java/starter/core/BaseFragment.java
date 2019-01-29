@@ -1,7 +1,5 @@
 package wq.android.mvvm.java.starter.core;
 
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -31,13 +29,8 @@ public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseVie
     public void onAttach(Context context) {
         super.onAttach(context);
         mViewModel.init(this);
-        ViewModelProviders.of(this, new ViewModelProvider.Factory() {
-            @NonNull
-            @Override
-            public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-                return (T) mViewModel;
-            }
-        }).get(mViewModel.getClass().getName(), mViewModel.getClass());
+        ViewModelProviders.of(this, ViewModelPassThroughFactory.newInstance(mViewModel))
+                .get(mViewModel.getClass().getName(), mViewModel.getClass());
     }
 
     @Nullable
@@ -48,11 +41,6 @@ public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseVie
         return mBinding.getRoot();
     }
 
-    @LayoutRes
-    public abstract int getLayoutId();
-
-    public abstract int getBindingVariable();
-
     public B getBinding() {
         return mBinding;
     }
@@ -60,4 +48,19 @@ public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseVie
     public VM getViewModel() {
         return mViewModel;
     }
+
+    /**
+     * Get layout resource id.
+     *
+     * @return layout resource id
+     */
+    @LayoutRes
+    public abstract int getLayoutId();
+
+    /**
+     * Override for setting binding variable
+     *
+     * @return variable id
+     */
+    public abstract int getBindingVariable();
 }

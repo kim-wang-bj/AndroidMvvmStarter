@@ -2,7 +2,6 @@ package wq.android.mvvm.java.starter.ui.detail.fragment;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.util.Log;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -27,18 +26,17 @@ public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigat
     @Inject
     public DetailFragmentViewModel(DataManager mDataManager) {
         this.mDataManager = mDataManager;
-        Observable.interval(1, TimeUnit.SECONDS).subscribe(c ->
-                mCurrentTime.postValue(mDataFormat.format(new Date())));
     }
 
     public void loadData() {
         mDataManager.loadData();
-        Log.d("test", this.getClass().getSimpleName() + ": " + this.hashCode() +
-                " DataManager: " + mDataManager.hashCode());
+        mCurrentTime.postValue(mDataFormat.format(new Date()));
+        getCompositeDisposable().add(Observable.interval(1, TimeUnit.SECONDS)
+                .subscribe(c -> mCurrentTime.postValue(mDataFormat.format(new Date()))));
     }
 
     public void handleCloseEvent() {
-        getNavigator().close();
+        getNavigator().finishActivity();
     }
 
     public LiveData<String> getCurrentTime() {

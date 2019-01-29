@@ -1,5 +1,11 @@
 package wq.android.mvvm.java.starter.ui.detail.fragment;
 
+/**
+ * @author wangqi
+ */
 public interface DetailFragmentNavigator {
-    void close();
+    /**
+     * Finish activity.
+     */
+    void finishActivity();
 }
