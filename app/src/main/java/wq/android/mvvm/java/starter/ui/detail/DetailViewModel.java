@@ -17,6 +17,6 @@ public class DetailViewModel extends BaseViewModel<DetailActivity> {
     }
 
     public void loadDetail() {
-        mDataManager.log();
+        mDataManager.loadData();
     }
 }

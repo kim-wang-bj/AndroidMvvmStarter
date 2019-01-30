@@ -13,6 +13,13 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            multiDexEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -23,6 +30,19 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions "main"
+
+    productFlavors {
+        dev {
+            minSdkVersion 21
+            dimension "main"
+        }
+        prod {
+            minSdkVersion rootProject.ext.minSdkVersion
+            dimension "main"
+        }
+    }
 }
 
 dependencies {
@@ -32,6 +52,9 @@ dependencies {
     testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation "com.android.support.test:runner:$rootProject.supportTestRunnerVerstion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.supportEspressoVersion"
+
+    // multidex for 64k method ref limit
+    implementation "com.android.support:multidex:$rootProject.multidexVersion"
 
     // lifecycle dependency
     implementation "android.arch.lifecycle:extensions:$rootProject.lifecycleVersion"

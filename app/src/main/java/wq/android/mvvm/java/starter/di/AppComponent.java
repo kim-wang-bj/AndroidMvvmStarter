@@ -1,11 +1,10 @@
 package wq.android.mvvm.java.starter.di;
 
-import javax.inject.Singleton;
-
 import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 import wq.android.mvvm.java.starter.App;
+import wq.android.mvvm.java.starter.di.annotation.AppScope;
 
 /**
  * @author wangqi
@@ -16,7 +15,7 @@ import wq.android.mvvm.java.starter.App;
                 ActivityBuilder.class
         }
 )
-@Singleton
+@AppScope
 public interface AppComponent extends AndroidInjector<App> {
 
     @Component.Builder

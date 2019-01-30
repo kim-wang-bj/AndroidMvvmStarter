@@ -1,12 +1,13 @@
 package wq.android.mvvm.java.starter.data;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
+
+import wq.android.mvvm.java.starter.di.annotation.AppScope;
 
 /**
  * @author wangqi
  */
-@Singleton
+@AppScope
 public class ApiService {
 
     @Inject
@@ -14,6 +15,5 @@ public class ApiService {
     }
 
     public void loadData() {
-
     }
 }
