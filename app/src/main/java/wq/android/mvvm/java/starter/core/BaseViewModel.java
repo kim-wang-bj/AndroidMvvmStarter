@@ -1,6 +1,6 @@
 package wq.android.mvvm.java.starter.core;
 
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel;
 
 import java.lang.ref.WeakReference;
 

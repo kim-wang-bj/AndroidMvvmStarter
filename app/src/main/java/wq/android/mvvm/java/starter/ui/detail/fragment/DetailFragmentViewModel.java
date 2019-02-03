@@ -1,7 +1,7 @@
 package wq.android.mvvm.java.starter.ui.detail.fragment;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
