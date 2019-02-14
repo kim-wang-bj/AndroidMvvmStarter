@@ -5,7 +5,7 @@ import android.util.Log;
 import javax.inject.Inject;
 
 import wq.android.mvvm.java.starter.data.DataManager;
-import wq.android.mvvm.java.starter.di.annotation.ActivityScope;
+import wq.android.mvvm.java.starter.di.annotation.scope.ActivityScope;
 
 /**
  * @author wangqi

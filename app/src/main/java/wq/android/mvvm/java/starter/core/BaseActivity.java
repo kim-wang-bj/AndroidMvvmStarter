@@ -1,15 +1,16 @@
 package wq.android.mvvm.java.starter.core;
 
-import androidx.lifecycle.ViewModelProviders;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 import android.os.Bundle;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.Nullable;
 
 import javax.inject.Inject;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+import androidx.lifecycle.ViewModelProviders;
 import dagger.android.support.DaggerAppCompatActivity;
+import wq.android.mvvm.java.starter.di.annotation.scope.ActivityScope;
 
 /**
  * @author wangqi
@@ -19,6 +20,7 @@ public abstract class BaseActivity<B extends ViewDataBinding, VM extends BaseVie
     private B mBinding;
 
     @Inject
+    @ActivityScope
     VM mViewModel;
 
     @Override

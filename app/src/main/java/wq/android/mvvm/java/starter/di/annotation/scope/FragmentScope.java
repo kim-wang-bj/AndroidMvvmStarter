@@ -1,4 +1,5 @@
-package wq.android.mvvm.java.starter.di.annotation;
+package wq.android.mvvm.java.starter.di.annotation.scope;
+
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -10,5 +11,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Scope
 @Documented
 @Retention(RUNTIME)
-public @interface ActivityScope {
+public @interface FragmentScope {
 }

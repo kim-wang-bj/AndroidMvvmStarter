@@ -4,7 +4,7 @@ import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 import wq.android.mvvm.java.starter.App;
-import wq.android.mvvm.java.starter.di.annotation.AppScope;
+import wq.android.mvvm.java.starter.di.annotation.scope.AppScope;
 
 /**
  * @author wangqi

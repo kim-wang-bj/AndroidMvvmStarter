@@ -2,7 +2,7 @@ package wq.android.mvvm.java.starter.data;
 
 import javax.inject.Inject;
 
-import wq.android.mvvm.java.starter.di.annotation.AppScope;
+import wq.android.mvvm.java.starter.di.annotation.scope.AppScope;
 
 /**
  * @author wangqi

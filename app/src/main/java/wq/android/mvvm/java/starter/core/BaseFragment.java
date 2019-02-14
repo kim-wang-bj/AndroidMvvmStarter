@@ -1,20 +1,21 @@
 package wq.android.mvvm.java.starter.core;
 
-import androidx.lifecycle.ViewModelProviders;
 import android.content.Context;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 import android.os.Bundle;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import javax.inject.Inject;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+import androidx.lifecycle.ViewModelProviders;
 import dagger.android.support.DaggerFragment;
+import wq.android.mvvm.java.starter.di.annotation.scope.FragmentScope;
 
 /**
  * @author wangqi
@@ -23,6 +24,7 @@ public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseVie
     private B mBinding;
 
     @Inject
+    @FragmentScope
     VM mViewModel;
 
     @Override
