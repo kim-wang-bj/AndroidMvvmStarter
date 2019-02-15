@@ -9,7 +9,7 @@ import wq.android.mvvm.java.starter.databinding.ActivityDetailBinding;
 import wq.android.mvvm.java.starter.ui.detail.fragment.DetailFragment;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailViewModel> implements DetailActivityNavigator {
 

@@ -10,7 +10,7 @@ import wq.android.mvvm.java.starter.databinding.ActivityMainBinding;
 import wq.android.mvvm.java.starter.ui.detail.DetailActivity;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> implements MainActivityNavigator {
 

@@ -1,7 +1,7 @@
 package wq.android.mvvm.java.starter.ui.main;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public interface MainActivityNavigator {
 }

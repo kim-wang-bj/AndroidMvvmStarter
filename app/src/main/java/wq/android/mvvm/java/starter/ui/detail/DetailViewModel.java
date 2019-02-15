@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import wq.android.mvvm.java.starter.core.BaseViewModel;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public class DetailViewModel extends BaseViewModel<DetailActivity> {
 

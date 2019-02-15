@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import wq.android.mvvm.java.starter.di.annotation.scope.AppScope;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 @AppScope
 public class ApiService {

@@ -1,7 +1,7 @@
 package wq.android.mvvm.java.starter.ui.detail;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public interface DetailActivityNavigator {
 }

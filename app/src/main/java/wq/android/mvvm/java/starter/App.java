@@ -1,14 +1,14 @@
 package wq.android.mvvm.java.starter;
 
 import android.content.Context;
-import androidx.multidex.MultiDex;
 
+import androidx.multidex.MultiDex;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 import wq.android.mvvm.java.starter.di.DaggerAppComponent;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public class App extends DaggerApplication {
 

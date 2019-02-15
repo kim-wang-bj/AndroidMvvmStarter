@@ -8,7 +8,7 @@ import wq.android.mvvm.java.starter.data.DataManager;
 import wq.android.mvvm.java.starter.di.annotation.scope.ActivityScope;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 @ActivityScope
 public class DetailDataManager {

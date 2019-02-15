@@ -6,7 +6,7 @@ import wq.android.mvvm.java.starter.core.BaseViewModel;
 import wq.android.mvvm.java.starter.data.DataManager;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public class MainViewModel extends BaseViewModel<MainActivityNavigator> {
     private final DataManager mApiService;

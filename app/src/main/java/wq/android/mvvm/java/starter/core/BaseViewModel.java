@@ -1,13 +1,12 @@
 package wq.android.mvvm.java.starter.core;
 
-import androidx.lifecycle.ViewModel;
-
 import java.lang.ref.WeakReference;
 
+import androidx.lifecycle.ViewModel;
 import io.reactivex.disposables.CompositeDisposable;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public abstract class BaseViewModel<N> extends ViewModel {
 

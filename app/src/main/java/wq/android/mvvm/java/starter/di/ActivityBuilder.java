@@ -10,7 +10,7 @@ import wq.android.mvvm.java.starter.ui.main.MainActivity;
 interface ActivityBuilder {
 
     @ActivityScope
-    @ContributesAndroidInjector()
+    @ContributesAndroidInjector(modules = FragmentBuilder.class)
     MainActivity bindMainActivity();
 
     @ActivityScope

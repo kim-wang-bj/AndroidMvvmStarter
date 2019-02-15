@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public final class ViewModelPassThroughFactory implements ViewModelProvider.Factory {
 

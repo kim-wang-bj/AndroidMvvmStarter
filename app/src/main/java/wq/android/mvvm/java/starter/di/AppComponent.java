@@ -7,7 +7,7 @@ import wq.android.mvvm.java.starter.App;
 import wq.android.mvvm.java.starter.di.annotation.scope.AppScope;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 @Component(
         modules = {

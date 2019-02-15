@@ -1,7 +1,7 @@
 package wq.android.mvvm.java.starter.ui.detail.fragment;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public interface DetailFragmentNavigator {
     /**

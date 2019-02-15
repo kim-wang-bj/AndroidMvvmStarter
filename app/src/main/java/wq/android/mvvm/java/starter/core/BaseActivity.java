@@ -13,7 +13,7 @@ import dagger.android.support.DaggerAppCompatActivity;
 import wq.android.mvvm.java.starter.di.annotation.scope.ActivityScope;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public abstract class BaseActivity<B extends ViewDataBinding, VM extends BaseViewModel> extends DaggerAppCompatActivity {
 

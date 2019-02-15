@@ -11,7 +11,7 @@ import wq.android.mvvm.java.starter.core.BaseFragment;
 import wq.android.mvvm.java.starter.databinding.FragmentDetailBinding;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public class DetailFragment
         extends BaseFragment<FragmentDetailBinding, DetailFragmentViewModel>

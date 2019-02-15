@@ -18,9 +18,10 @@ import dagger.android.support.DaggerFragment;
 import wq.android.mvvm.java.starter.di.annotation.scope.FragmentScope;
 
 /**
- * @author wangqi
+ * @author Wang Qi
  */
 public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseViewModel> extends DaggerFragment {
+
     private B mBinding;
 
     @Inject
