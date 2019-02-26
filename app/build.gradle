@@ -60,6 +60,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$rootProject.lifecycleVersion"
 
+    implementation "androidx.annotation:annotation:$rootProject.annotationVersion"
+
     // dependency injection
     implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
@@ -67,16 +69,33 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
     annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
 
-    // reactive
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
-    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
-
     // font
-    implementation "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
+    implementation "io.github.inflationx:calligraphy3:$rootProject.calligraphyVersion"
+    implementation "io.github.inflationx:viewpump:$rootProject.viewpumpVersion"
 
     // image
     implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
 
     // parser
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    compileOnly "org.projectlombok:lombok:$rootProject.lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$rootProject.lombokVersion"
+
+    // reactive
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-core:$rootProject.rxbindingVerstion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-appcompat:$rootProject.rxbindingVerstion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-drawerlayout:$rootProject.rxbindingVerstion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-leanback:$rootProject.rxbindingVerstion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-recyclerview:$rootProject.rxbindingVerstion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-slidingpanelayout:$rootProject.rxbindingVerstion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:$rootProject.rxbindingVerstion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-viewpager:$rootProject.rxbindingVerstion"
+
+    // network
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rootProject.retrofitRxJavaAdapterVersion"
 }

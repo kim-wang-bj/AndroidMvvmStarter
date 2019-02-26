@@ -27,7 +27,7 @@ task clean(type: Delete) {
 
 ext {
     // Sdk and tools
-    minSdkVersion = 19
+    minSdkVersion = 21
     targetSdkVersion = 28
     compileSdkVersion = 28
     buildToolsVersion = '28.0.3'
@@ -37,9 +37,11 @@ ext {
     supportLibraryVersion = '1.0.0-beta01'
     supportConstraintLayoutVersion = '1.1.2'
     supportTestRunnerVerstion = '1.1.0-alpha4'
+    annotationVersion = '1.0.1'
     lifecycleVersion = '2.0.0-beta01'
     gsonVersion = '2.8.5'
-    calligraphyVersion = '2.2.0'
+    calligraphyVersion = '3.1.0'
+    viewpumpVersion = '1.0.0'
     glideVersion = '3.8.0'
     roomDatabase = '1.0.0'
     rx2FastAndroidNetworking = '1.0.1'
@@ -47,13 +49,17 @@ ext {
     daggerVersion = '2.21'
     rxjava2Version = '2.2.6'
     rxandroidVersion = '2.1.0'
+    rxbindingVerstion = '3.0.0-alpha2'
     placeholderviewVersion = '0.6.1'
     debugDBVersion = '1.0.3'
     timberVersion = '4.5.1'
-    lifecycle = '1.1.0'
 
     // Test dependencies
     junitVersion = '4.12'
     supportEspressoVersion = '3.1.0-alpha4'
     mockitoVersion = '2.15.0'
+
+    lombokVersion = '1.18.6'
+    retrofitVersion = '2.5.0'
+    retrofitRxJavaAdapterVersion = '1.0.0'
 }

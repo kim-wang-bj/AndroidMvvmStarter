@@ -22,12 +22,13 @@
             android:text="@{viewModel.currentTime}" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_close"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="30dp"
             android:background="@color/colorAccent"
+            android:onClickListenerThrottleFirst500="@{viewModel}"
             android:text="Close"
             android:textAllCaps="false" />
 

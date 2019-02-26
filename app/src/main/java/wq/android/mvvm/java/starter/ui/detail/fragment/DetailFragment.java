@@ -1,9 +1,10 @@
 package wq.android.mvvm.java.starter.ui.detail.fragment;
 
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import android.view.View;
 
 import wq.android.mvvm.java.starter.BR;
 import wq.android.mvvm.java.starter.R;
@@ -27,7 +28,6 @@ public class DetailFragment
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         getViewModel().loadData();
-        getBinding().button.setOnClickListener(v -> getViewModel().handleCloseEvent());
     }
 
     @Override

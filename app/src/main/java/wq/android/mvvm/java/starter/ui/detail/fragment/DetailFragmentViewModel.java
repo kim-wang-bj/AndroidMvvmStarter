@@ -1,5 +1,10 @@
 package wq.android.mvvm.java.starter.ui.detail.fragment;
 
+import android.view.View;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,16 +12,17 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import io.reactivex.Observable;
+import wq.android.mvvm.java.starter.R;
 import wq.android.mvvm.java.starter.core.BaseViewModel;
+import wq.android.mvvm.java.starter.di.annotation.scope.FragmentScope;
 import wq.android.mvvm.java.starter.ui.detail.DetailDataManager;
 
 /**
  * @author Wang Qi
  */
-public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigator> {
+@FragmentScope
+public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigator> implements View.OnClickListener {
 
     private final DetailDataManager mDataManager;
     private MutableLiveData<String> mCurrentTime = new MutableLiveData<>();
@@ -34,11 +40,17 @@ public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigat
                 .subscribe(c -> mCurrentTime.postValue(mDataFormat.format(new Date()))));
     }
 
-    public void handleCloseEvent() {
-        getNavigator().finishActivity();
-    }
-
     public LiveData<String> getCurrentTime() {
         return mCurrentTime;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_close:
+                getNavigator().finishActivity();
+                break;
+            default:
+        }
     }
 }
