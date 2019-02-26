@@ -1,7 +1,5 @@
 package wq.android.mvvm.java.starter.network.retrofit;
 
-import androidx.annotation.NonNull;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -9,8 +7,8 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
+import androidx.annotation.NonNull;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
@@ -70,8 +68,11 @@ public class RetrofitFactory {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnNext(baseResponse -> {
-                    }).onErrorResumeNext((ObservableSource<? extends BaseResponse<?>>) o -> {
-
+                        if (baseResponse.getCode() != ResponseCode.OK) {
+                            throw new RetrofitException(baseResponse);
+                        }
+                    }).onErrorResumeNext(throwable -> {
+                        return Observable.error(throwable);
                     });
         }
     }
