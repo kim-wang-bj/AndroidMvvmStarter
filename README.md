@@ -2,6 +2,8 @@
 
 [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](http://developer.android.com/index.html)
 
+## Setup
+- **Install lombok plugin to Android Studio:** go to menu File > Settings > Plugins, and then search lombok and install it.
 ## Libraries
 (Under Developing)
 - [RxJava2](https://github.com/ReactiveX/RxJava) and [RxAndroid](https://github.com/ReactiveX/RxAndroid)
