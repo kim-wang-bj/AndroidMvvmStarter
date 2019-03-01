@@ -1,5 +1,7 @@
 package wq.android.mvvm.java.starter.data;
 
+import android.annotation.SuppressLint;
+
 import javax.inject.Inject;
 
 import wq.android.mvvm.java.starter.dagger.annotation.scope.AppScope;
@@ -19,9 +21,10 @@ public class DataManager {
         this.mRetrofitManager = retrofitManager;
     }
 
+    @SuppressLint("CheckResult")
     public void loadData() {
         OkayApiService okayapiService = mRetrofitManager.getService(OkayApiService.class);
-        okayapiService.request("App.Hello.World", "35683338D9CBB2AFF90EE700202D5E90", "F26BBF055EDFAD7472402C61613F1970")
+        okayapiService.request("App.Hello.World", "35683338D9CBB2AFF90EE700202D5E90", "F26BBF055EDFAD7472402C61613F1970", "aaa")
                 .subscribe(response -> response.getData(),
                         throwable -> throwable.getMessage());
     }

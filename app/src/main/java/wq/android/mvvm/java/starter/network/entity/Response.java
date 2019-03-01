@@ -5,19 +5,17 @@ import com.google.gson.annotations.SerializedName;
 
 import lombok.Value;
 
-
 /**
  * @author Wang Qi
  */
 @Value
 public class Response<T> {
-
     @Expose
-    @SerializedName("code")
+    @SerializedName("ret")
     private Integer code;
 
     @Expose
-    @SerializedName("message")
+    @SerializedName("msg")
     private String message;
 
     @Expose
