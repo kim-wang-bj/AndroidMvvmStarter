@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.network.retrofit;
+package wq.android.mvvm.java.starter.network.http.okhttp;
 
 import okhttp3.OkHttpClient;
 

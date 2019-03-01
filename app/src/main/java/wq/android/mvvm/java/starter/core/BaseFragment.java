@@ -6,16 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import javax.inject.Inject;
-
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModelProviders;
+
+import javax.inject.Inject;
+
 import dagger.android.support.DaggerFragment;
-import wq.android.mvvm.java.starter.di.annotation.scope.FragmentScope;
+import wq.android.mvvm.java.starter.dagger.annotation.scope.FragmentScope;
 
 /**
  * @author Wang Qi

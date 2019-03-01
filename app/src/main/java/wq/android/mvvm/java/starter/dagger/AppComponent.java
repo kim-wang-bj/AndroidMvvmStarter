@@ -1,10 +1,10 @@
-package wq.android.mvvm.java.starter.di;
+package wq.android.mvvm.java.starter.dagger;
 
 import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 import wq.android.mvvm.java.starter.App;
-import wq.android.mvvm.java.starter.di.annotation.scope.AppScope;
+import wq.android.mvvm.java.starter.dagger.annotation.scope.AppScope;
 
 /**
  * @author Wang Qi

@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import wq.android.mvvm.java.starter.core.BaseViewModel;
 import wq.android.mvvm.java.starter.data.DataManager;
-import wq.android.mvvm.java.starter.network.retrofit.RetrofitManager;
+import wq.android.mvvm.java.starter.network.http.retrofit.RetrofitManager;
 
 /**
  * @author Wang Qi

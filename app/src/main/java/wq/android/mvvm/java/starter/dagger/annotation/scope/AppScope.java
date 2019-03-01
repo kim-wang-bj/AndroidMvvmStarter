@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.di.annotation.scope;
+package wq.android.mvvm.java.starter.dagger.annotation.scope;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -10,5 +10,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Scope
 @Documented
 @Retention(RUNTIME)
-public @interface ActivityScope {
+public @interface AppScope {
 }

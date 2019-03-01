@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModelProviders;
 import dagger.android.support.DaggerAppCompatActivity;
-import wq.android.mvvm.java.starter.di.annotation.scope.ActivityScope;
+import wq.android.mvvm.java.starter.dagger.annotation.scope.ActivityScope;
 
 /**
  * @author Wang Qi

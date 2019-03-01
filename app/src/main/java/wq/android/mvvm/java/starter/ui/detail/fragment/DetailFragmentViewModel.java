@@ -1,5 +1,7 @@
 package wq.android.mvvm.java.starter.ui.detail.fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import androidx.lifecycle.LiveData;
@@ -15,17 +17,19 @@ import javax.inject.Inject;
 import io.reactivex.Observable;
 import wq.android.mvvm.java.starter.R;
 import wq.android.mvvm.java.starter.core.BaseViewModel;
-import wq.android.mvvm.java.starter.di.annotation.scope.FragmentScope;
+import wq.android.mvvm.java.starter.dagger.annotation.scope.FragmentScope;
 import wq.android.mvvm.java.starter.ui.detail.DetailDataManager;
 
 /**
  * @author Wang Qi
  */
 @FragmentScope
-public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigator> implements View.OnClickListener {
+public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigator>
+        implements View.OnClickListener, TextWatcher {
 
     private final DetailDataManager mDataManager;
     private MutableLiveData<String> mCurrentTime = new MutableLiveData<>();
+    private MutableLiveData<String> mTextInfo = new MutableLiveData<>();
     private DateFormat mDataFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Inject
@@ -52,5 +56,20 @@ public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigat
                 break;
             default:
         }
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
     }
 }

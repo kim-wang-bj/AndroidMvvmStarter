@@ -3,7 +3,7 @@ package wq.android.mvvm.java.starter.ui.detail;
 import javax.inject.Inject;
 
 import wq.android.mvvm.java.starter.core.BaseViewModel;
-import wq.android.mvvm.java.starter.di.annotation.scope.ActivityScope;
+import wq.android.mvvm.java.starter.dagger.annotation.scope.ActivityScope;
 
 /**
  * @author Wang Qi

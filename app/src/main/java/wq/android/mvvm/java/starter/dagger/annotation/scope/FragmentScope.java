@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.di.annotation.scope;
+package wq.android.mvvm.java.starter.dagger.annotation.scope;
 
 
 import java.lang.annotation.Documented;

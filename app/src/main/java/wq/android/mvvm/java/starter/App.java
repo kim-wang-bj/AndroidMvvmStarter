@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.multidex.MultiDex;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
-import wq.android.mvvm.java.starter.di.DaggerAppComponent;
+import wq.android.mvvm.java.starter.dagger.DaggerAppComponent;
 
 /**
  * @author Wang Qi

@@ -1,22 +1,20 @@
-package wq.android.mvvm.java.starter.network.retrofit;
+package wq.android.mvvm.java.starter.network.entity;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.Value;
 
 
 /**
  * @author Wang Qi
  */
-@Data
-@Builder
-public class BaseResponse<T> {
+@Value
+public class Response<T> {
 
     @Expose
     @SerializedName("code")
-    private ResponseCode code;
+    private Integer code;
 
     @Expose
     @SerializedName("message")

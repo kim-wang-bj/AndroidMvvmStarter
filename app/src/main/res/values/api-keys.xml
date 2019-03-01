@@ -1,0 +1,4 @@
+<resources>
+    <!-- https://openweathermap.org/api -->
+    <string name="open_weather_api_key">a3a51877546f50811871b59e4997961b</string>
+</resources>
