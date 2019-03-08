@@ -16,7 +16,7 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import wq.android.mvvm.java.starter.R;
-import wq.android.mvvm.java.starter.core.BaseViewModel;
+import wq.android.mvvm.java.starter.core.base.BaseViewModel;
 import wq.android.mvvm.java.starter.dagger.annotation.scope.FragmentScope;
 import wq.android.mvvm.java.starter.ui.detail.DetailDataManager;
 
@@ -70,6 +70,5 @@ public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigat
 
     @Override
     public void afterTextChanged(Editable s) {
-
     }
 }

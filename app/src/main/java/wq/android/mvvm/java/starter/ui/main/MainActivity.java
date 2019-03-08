@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import wq.android.mvvm.java.starter.BR;
 import wq.android.mvvm.java.starter.R;
-import wq.android.mvvm.java.starter.core.BaseActivity;
+import wq.android.mvvm.java.starter.core.base.BaseActivity;
 import wq.android.mvvm.java.starter.databinding.ActivityMainBinding;
 import wq.android.mvvm.java.starter.ui.detail.DetailActivity;
 

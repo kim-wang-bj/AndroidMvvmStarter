@@ -1,8 +1,9 @@
-package wq.android.mvvm.java.starter.core;
+package wq.android.mvvm.java.starter.core.base;
+
+import androidx.lifecycle.ViewModel;
 
 import java.lang.ref.WeakReference;
 
-import androidx.lifecycle.ViewModel;
 import io.reactivex.disposables.CompositeDisposable;
 
 /**

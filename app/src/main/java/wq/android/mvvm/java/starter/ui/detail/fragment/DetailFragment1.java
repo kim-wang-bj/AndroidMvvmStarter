@@ -14,13 +14,13 @@ import wq.android.mvvm.java.starter.databinding.FragmentDetailBinding;
 /**
  * @author Wang Qi
  */
-public class DetailFragment
+public class DetailFragment1
         extends BaseFragment<FragmentDetailBinding, DetailFragmentViewModel>
         implements DetailFragmentNavigator {
 
-    public static DetailFragment newInstance() {
+    public static DetailFragment1 newInstance() {
         Bundle args = new Bundle();
-        DetailFragment fragment = new DetailFragment();
+        DetailFragment1 fragment = new DetailFragment1();
         fragment.setArguments(args);
         return fragment;
     }

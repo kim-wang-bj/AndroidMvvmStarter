@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.core;
+package wq.android.mvvm.java.starter.core.base;
 
 import android.content.Context;
 import android.os.Bundle;

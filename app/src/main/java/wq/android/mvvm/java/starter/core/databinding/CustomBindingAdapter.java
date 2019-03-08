@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.core;
+package wq.android.mvvm.java.starter.core.databinding;
 
 import android.text.Editable;
 import android.view.View;
@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 /**
@@ -99,23 +98,10 @@ public class CustomBindingAdapter {
     }
 
     private static void onClickThrottleFirst(View v, int duration, Consumer<View> consumer) {
-        Disposable disposable = RxView.clicks(v)
-                .subscribeOn(AndroidSchedulers.mainThread())
+        RxView.clicks(v)
                 .observeOn(AndroidSchedulers.mainThread())
                 .throttleFirst(duration, TimeUnit.MILLISECONDS)
                 .map(o -> v)
                 .subscribe(consumer);
-        v.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
-            @Override
-            public void onViewAttachedToWindow(View v) {
-            }
-
-            @Override
-            public void onViewDetachedFromWindow(View v) {
-                if (disposable != null && !disposable.isDisposed()) {
-                    disposable.dispose();
-                }
-            }
-        });
     }
 }

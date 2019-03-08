@@ -1,14 +1,15 @@
-package wq.android.mvvm.java.starter.core;
+package wq.android.mvvm.java.starter.core.base;
 
 import android.os.Bundle;
-
-import javax.inject.Inject;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModelProviders;
+
+import javax.inject.Inject;
+
 import dagger.android.support.DaggerAppCompatActivity;
 import wq.android.mvvm.java.starter.dagger.annotation.scope.ActivityScope;
 

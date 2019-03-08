@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.core;
+package wq.android.mvvm.java.starter.core.base;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 /**
  * @author Wang Qi
  */
-public final class ViewModelPassThroughFactory implements ViewModelProvider.Factory {
+final class ViewModelPassThroughFactory implements ViewModelProvider.Factory {
 
     private ViewModel mViewModel;
 
