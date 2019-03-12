@@ -2,11 +2,12 @@ package wq.android.mvvm.java.starter.network.http.retrofit;
 
 import android.util.ArrayMap;
 
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import wq.android.mvvm.java.starter.dagger.annotation.scope.AppScope;
-import wq.android.mvvm.java.starter.network.http.retrofit.service.OkayApiService;
-import wq.android.mvvm.java.starter.network.http.retrofit.service.OpenWeatherService;
+import wq.android.mvvm.java.starter.network.http.retrofit.service.LunarCalendarService;
 
 /**
  * @author Wang Qi
@@ -14,12 +15,11 @@ import wq.android.mvvm.java.starter.network.http.retrofit.service.OpenWeatherSer
 @AppScope
 public class RetrofitManager {
 
-    private static final ArrayMap<Class<?>, Object> mServiceCache = new ArrayMap<>();
-    private static final ArrayMap<Class<?>, String> mBaseUrlMap = new ArrayMap<>();
+    private static final Map<Class<?>, Object> mServiceCache = new ArrayMap<>();
+    private static final Map<Class<?>, String> mBaseUrlMap = new ArrayMap<>();
 
     static {
-        mBaseUrlMap.put(OpenWeatherService.class, "https://api.openweathermap.org/data/2.5/");
-        mBaseUrlMap.put(OkayApiService.class, "http://hb9.api.okayapi.com/");
+        mBaseUrlMap.put(LunarCalendarService.class, "https://www.sojson.com/open/api/lunar/");
     }
 
     @Inject

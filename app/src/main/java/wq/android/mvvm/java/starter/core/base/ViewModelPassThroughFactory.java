@@ -1,8 +1,8 @@
 package wq.android.mvvm.java.starter.core.base;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.annotation.NonNull;
 
 /**
  * @author Wang Qi

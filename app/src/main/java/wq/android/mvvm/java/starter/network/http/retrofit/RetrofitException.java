@@ -1,28 +1,28 @@
 package wq.android.mvvm.java.starter.network.http.retrofit;
 
-import wq.android.mvvm.java.starter.network.entity.Response;
+import wq.android.mvvm.java.starter.network.entity.RetrofitResponse;
 
 /**
  * @author Wang Qi
  */
 public class RetrofitException extends RuntimeException {
 
-    private Response mResponse;
+    private RetrofitResponse mRetrofitResponse;
 
-    public RetrofitException(Response response) {
-        this.mResponse = response;
+    public RetrofitException(RetrofitResponse retrofitResponse) {
+        this.mRetrofitResponse = retrofitResponse;
     }
 
     @Override
     public String getMessage() {
-        return mResponse.getMessage();
+        return mRetrofitResponse.getMessage();
     }
 
-    public Integer getCode() {
-        return mResponse.getCode();
+    public Integer getStatus() {
+        return mRetrofitResponse.getStatus();
     }
 
-    public Response getResponse() {
-        return mResponse;
+    public RetrofitResponse getResponse() {
+        return mRetrofitResponse;
     }
 }

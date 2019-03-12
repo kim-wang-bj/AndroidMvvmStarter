@@ -1,12 +1,13 @@
 package wq.android.mvvm.java.starter.data;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import javax.inject.Inject;
 
 import wq.android.mvvm.java.starter.dagger.annotation.scope.AppScope;
 import wq.android.mvvm.java.starter.network.http.retrofit.RetrofitManager;
-import wq.android.mvvm.java.starter.network.http.retrofit.service.OkayApiService;
+import wq.android.mvvm.java.starter.network.http.retrofit.service.LunarCalendarService;
 
 /**
  * @author Wang Qi
@@ -23,9 +24,11 @@ public class DataManager {
 
     @SuppressLint("CheckResult")
     public void loadData() {
-        OkayApiService okayapiService = mRetrofitManager.getService(OkayApiService.class);
-        okayapiService.request("App.Hello.World", "35683338D9CBB2AFF90EE700202D5E90", "F26BBF055EDFAD7472402C61613F1970", "aaa")
-                .subscribe(response -> response.getData(),
-                        throwable -> throwable.getMessage());
+        LunarCalendarService service = mRetrofitManager.getService(LunarCalendarService.class);
+        service.requestLunarDate("2019-03-01").subscribe(response -> {
+            response.getData();
+        }, throwable -> {
+            Log.e("test", throwable.getMessage());
+        });
     }
 }
