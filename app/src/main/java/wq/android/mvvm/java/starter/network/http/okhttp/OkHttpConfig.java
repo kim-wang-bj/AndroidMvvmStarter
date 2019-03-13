@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.network.http;
+package wq.android.mvvm.java.starter.network.http.okhttp;
 
 import android.util.ArrayMap;
 
@@ -8,9 +8,9 @@ import java.util.Map;
  * @author Wang Qi
  * @date 2019-03-12
  */
-public class HttpConfig {
+public class OkHttpConfig {
 
-    public static class CommonHeaders {
+    public static class CommonHeader {
         private static final ArrayMap<String, String> COMMON_HEADERS = new ArrayMap<>();
 
         static {

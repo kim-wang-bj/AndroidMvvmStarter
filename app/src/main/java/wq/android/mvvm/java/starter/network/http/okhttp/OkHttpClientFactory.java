@@ -7,7 +7,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
 import wq.android.mvvm.java.starter.BuildConfig;
-import wq.android.mvvm.java.starter.network.http.HttpConfig;
 
 /**
  * @author Wang Qi
@@ -22,7 +21,7 @@ public class OkHttpClientFactory {
     }
 
     private static void addHeaderInterceptor(OkHttpClient.Builder builder) {
-        Map<String, String> headers = HttpConfig.CommonHeaders.values();
+        Map<String, String> headers = OkHttpConfig.CommonHeader.values();
         Interceptor interceptor = chain -> {
             Request.Builder requestBuilder = chain.request().newBuilder();
             for (String key : headers.keySet()) {
