@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProviders;
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
-import wq.android.mvvm.java.starter.dagger.annotation.scope.FragmentScope;
+import wq.android.mvvm.java.common.dagger.annotation.FragmentScope;
 
 /**
  * @author Wang Qi

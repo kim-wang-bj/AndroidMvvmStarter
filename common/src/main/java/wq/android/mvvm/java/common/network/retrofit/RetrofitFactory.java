@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.network.http.retrofit;
+package wq.android.mvvm.java.common.network.retrofit;
 
 import androidx.annotation.NonNull;
 
@@ -16,8 +16,7 @@ import retrofit2.Call;
 import retrofit2.CallAdapter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import wq.android.mvvm.java.starter.network.entity.RetrofitResponse;
-import wq.android.mvvm.java.starter.network.http.okhttp.OkHttpClientFactory;
+import wq.android.mvvm.java.common.network.okhttp.OkHttpClientFactory;
 
 /**
  * @author Wang Qi
@@ -25,13 +24,12 @@ import wq.android.mvvm.java.starter.network.http.okhttp.OkHttpClientFactory;
 public class RetrofitFactory {
 
     @NonNull
-    public static Retrofit get(String baseUrl) {
-
+    public static Retrofit get(RetrofitService service) {
         return new Retrofit.Builder()
-                .baseUrl(baseUrl)
+                .baseUrl(service.getBasUrl())
                 .addConverterFactory(GsonConverterFactory.create(createGson()))
                 .client(OkHttpClientFactory.create())
-                .addCallAdapterFactory(new RetrofitCallAdapterFactory())
+                .addCallAdapterFactory(new RetrofitCallAdapterFactory(service))
                 .build();
     }
 
@@ -46,17 +44,24 @@ public class RetrofitFactory {
 
     private static class RetrofitCallAdapterFactory extends retrofit2.CallAdapter.Factory {
         RxJava2CallAdapterFactory callAdapterFactory = RxJava2CallAdapterFactory.create();
+        RetrofitService service;
+
+        RetrofitCallAdapterFactory(RetrofitService service) {
+            this.service = service;
+        }
 
         @Override
         public CallAdapter<?, ?> get(Type returnType, Annotation[] annotations, Retrofit retrofit) {
-            return new RetrofitCallAdapter(callAdapterFactory.get(returnType, annotations, retrofit));
+            return new RetrofitCallAdapter(service, callAdapterFactory.get(returnType, annotations, retrofit));
         }
     }
 
     private static class RetrofitCallAdapter implements CallAdapter<Observable<RetrofitResponse<?>>, Observable<RetrofitResponse<?>>> {
         private CallAdapter<Observable<RetrofitResponse<?>>, Observable<RetrofitResponse<?>>> mCallAdapter;
+        RetrofitService service;
 
-        public RetrofitCallAdapter(CallAdapter callAdapter) {
+        public RetrofitCallAdapter(RetrofitService service, CallAdapter callAdapter) {
+            this.service = service;
             this.mCallAdapter = callAdapter;
         }
 
@@ -71,9 +76,7 @@ public class RetrofitFactory {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnNext(retrofitResponse -> {
-                        if (retrofitResponse.getStatus() != RetrofitResponse.Status.OK.value()) {
-                            throw new RetrofitException(retrofitResponse);
-                        }
+                        service.getResponseInterceptor().onResponse(retrofitResponse);
                     }).onErrorResumeNext(throwable -> {
                         return Observable.error(throwable);
                     });

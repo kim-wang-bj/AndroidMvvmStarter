@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:$rootProject.supportLibraryVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "androidx.test:runner:$rootProject.supportTestRunnerVerstion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.supportEspressoVersion"
+
+    compileOnly "org.projectlombok:lombok:$rootProject.lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$rootProject.lombokVersion"
+
+    // dependency injection
+    api "com.google.dagger:dagger:$rootProject.daggerVersion"
+    api "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+    api "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+
+    // reactive
+    api "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    api "com.jakewharton.rxbinding3:rxbinding-core:$rootProject.rxbindingVerstion"
+    api "com.jakewharton.rxbinding3:rxbinding-appcompat:$rootProject.rxbindingVerstion"
+    api "com.jakewharton.rxbinding3:rxbinding-drawerlayout:$rootProject.rxbindingVerstion"
+    api "com.jakewharton.rxbinding3:rxbinding-leanback:$rootProject.rxbindingVerstion"
+    api "com.jakewharton.rxbinding3:rxbinding-recyclerview:$rootProject.rxbindingVerstion"
+    api "com.jakewharton.rxbinding3:rxbinding-slidingpanelayout:$rootProject.rxbindingVerstion"
+    api "com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:$rootProject.rxbindingVerstion"
+    api "com.jakewharton.rxbinding3:rxbinding-viewpager:$rootProject.rxbindingVerstion"
+
+    // network
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    api 'com.squareup.okhttp3:logging-interceptor:3.13.1'
+    api "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rootProject.retrofitRxJavaAdapterVersion"
+}

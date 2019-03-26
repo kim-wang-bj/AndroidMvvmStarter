@@ -4,29 +4,23 @@ import android.util.ArrayMap;
 
 import java.util.Map;
 
-import javax.inject.Inject;
-
-import wq.android.mvvm.java.starter.dagger.annotation.scope.AppScope;
+import wq.android.mvvm.java.common.network.retrofit.RetrofitService;
+import wq.android.mvvm.java.starter.network.http.retrofit.service.LunarCalendarService;
 
 /**
  * @author Wang Qi
+ * @date 2019-03-13
  */
-@AppScope
 public class RetrofitManager {
+    private static Map<Class<?>, RetrofitService.Builder> mRetrofitServiceMap = new ArrayMap<>(0);
 
-    private static final Map<Class<?>, Object> mServiceCache = new ArrayMap<>(0);
-
-    @Inject
-    public RetrofitManager() {
+    static {
+        mRetrofitServiceMap.put(LunarCalendarService.class, RetrofitService.builder()
+                .basUrl("https://www.sojson.com/open/api/lunar/")
+                .serviceClass(LunarCalendarService.class));
     }
 
-    public <T> T getService(Class<T> clazz) {
-        Object service = mServiceCache.get(clazz);
-        if (service == null) {
-            service = RetrofitFactory.get(RetrofitConfig.serviceUrlMap().get(clazz)).create(clazz);
-            mServiceCache.put(clazz, service);
-        }
-        return (T) service;
+    public static <T> T getService(Class<?> clazz) {
+        return RetrofitService.get(mRetrofitServiceMap.get(clazz));
     }
-
 }

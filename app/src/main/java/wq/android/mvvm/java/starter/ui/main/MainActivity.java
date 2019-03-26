@@ -17,7 +17,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     @Override
     protected void onActivityCreated(Bundle savedInstanceState) {
         getBinding().button.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, DetailActivity.class)));
-        getViewModel().toString();
     }
 
     @Override

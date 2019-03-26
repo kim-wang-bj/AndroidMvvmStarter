@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.network.http.okhttp;
+package wq.android.mvvm.java.common.network.okhttp;
 
 import java.util.Map;
 
@@ -6,7 +6,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
-import wq.android.mvvm.java.starter.BuildConfig;
+import wq.android.mvvm.java.common.BuildConfig;
 
 /**
  * @author Wang Qi

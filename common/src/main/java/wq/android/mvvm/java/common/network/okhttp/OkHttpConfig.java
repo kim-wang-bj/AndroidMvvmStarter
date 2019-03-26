@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.network.http.okhttp;
+package wq.android.mvvm.java.common.network.okhttp;
 
 import android.util.ArrayMap;
 

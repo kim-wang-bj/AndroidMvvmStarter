@@ -15,9 +15,9 @@ import java.util.concurrent.TimeUnit;
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
+import wq.android.mvvm.java.common.dagger.annotation.FragmentScope;
 import wq.android.mvvm.java.starter.R;
 import wq.android.mvvm.java.starter.core.base.BaseViewModel;
-import wq.android.mvvm.java.starter.dagger.annotation.scope.FragmentScope;
 import wq.android.mvvm.java.starter.ui.detail.DetailDataManager;
 
 /**
@@ -41,7 +41,7 @@ public class DetailFragmentViewModel extends BaseViewModel<DetailFragmentNavigat
         mDataManager.loadData();
         mCurrentTime.postValue(mDataFormat.format(new Date()));
         getCompositeDisposable().add(Observable.interval(1, TimeUnit.SECONDS)
-                .subscribe(c -> mCurrentTime.postValue(mDataFormat.format(new Date()))));
+                .subscribe(c -> mCurrentTime.postValue(mDataFormat.format(System.currentTimeMillis()))));
     }
 
     public LiveData<String> getCurrentTime() {

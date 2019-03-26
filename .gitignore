@@ -75,3 +75,6 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 gradle/
+libs/
+src/main/assets/
+src/main/java/wq/android/mvvm/java/starter/utils/

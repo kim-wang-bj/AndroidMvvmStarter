@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProviders;
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
-import wq.android.mvvm.java.starter.dagger.annotation.scope.ActivityScope;
+import wq.android.mvvm.java.common.dagger.annotation.ActivityScope;
 
 /**
  * @author Wang Qi

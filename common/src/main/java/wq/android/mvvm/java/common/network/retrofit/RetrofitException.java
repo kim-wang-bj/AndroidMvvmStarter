@@ -1,6 +1,5 @@
-package wq.android.mvvm.java.starter.network.http.retrofit;
+package wq.android.mvvm.java.common.network.retrofit;
 
-import wq.android.mvvm.java.starter.network.entity.RetrofitResponse;
 
 /**
  * @author Wang Qi

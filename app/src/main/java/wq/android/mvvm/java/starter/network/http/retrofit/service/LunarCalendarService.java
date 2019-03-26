@@ -3,8 +3,8 @@ package wq.android.mvvm.java.starter.network.http.retrofit.service;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import wq.android.mvvm.java.common.network.retrofit.RetrofitResponse;
 import wq.android.mvvm.java.starter.network.entity.LunarDate;
-import wq.android.mvvm.java.starter.network.entity.RetrofitResponse;
 
 /**
  * https://www.sojson.com/open/api/lunar/json.shtml?date=2019-03-01
@@ -16,7 +16,7 @@ public interface LunarCalendarService {
     /**
      * Request lunar date.
      *
-     * @param date
+     * @param date 2019-03-01
      * @return
      */
     @GET("json.shtml")

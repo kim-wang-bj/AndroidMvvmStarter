@@ -2,7 +2,7 @@ package wq.android.mvvm.java.starter.dagger;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
-import wq.android.mvvm.java.starter.dagger.annotation.scope.ActivityScope;
+import wq.android.mvvm.java.common.dagger.annotation.ActivityScope;
 import wq.android.mvvm.java.starter.ui.detail.DetailActivity;
 import wq.android.mvvm.java.starter.ui.main.MainActivity;
 

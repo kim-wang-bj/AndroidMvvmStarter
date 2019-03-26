@@ -1,4 +1,4 @@
-package wq.android.mvvm.java.starter.network.entity;
+package wq.android.mvvm.java.common.network.retrofit;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
